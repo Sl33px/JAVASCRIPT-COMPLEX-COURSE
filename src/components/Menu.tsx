@@ -4,10 +4,10 @@ const Menu = () => {
     return (
         <div>
             <ul>
-                <li><Link href='/'>home</Link></li><br/>
-                <li><Link href='/users'>users</Link></li>
-                <li><Link href='/posts'>posts</Link></li>
-                <li><Link href='/comments'>comments</Link></li>
+                <li><Link href='/hw1'>home</Link></li><br/>
+                <li><Link href='/hw1/users'>users</Link></li>
+                <li><Link href='/hw1/posts'>posts</Link></li>
+                <li><Link href='/hw1/comments'>comments</Link></li>
             </ul>
 
             <hr/>
