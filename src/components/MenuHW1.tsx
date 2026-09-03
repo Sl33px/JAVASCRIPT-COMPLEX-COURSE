@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Menu = () => {
+const MenuHW1 = () => {
     return (
         <div>
             <ul>
@@ -9,10 +9,9 @@ const Menu = () => {
                 <li><Link href='/hw1/posts'>posts</Link></li>
                 <li><Link href='/hw1/comments'>comments</Link></li>
             </ul>
-
             <hr/>
         </div>
     );
 };
 
-export default Menu;
+export default MenuHW1;
