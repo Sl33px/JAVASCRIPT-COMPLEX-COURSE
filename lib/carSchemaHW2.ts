@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const carSchema = z.object({
+export const carSchemaHW2 = z.object({
     brand: z
         .string()
         .min(1, "Brand is required")
@@ -21,4 +21,4 @@ export const carSchema = z.object({
         .max(2026, "Maximum year is 2026"),
 });
 
-export type CarFormData = z.infer<typeof carSchema>;
+export type CarFormData = z.infer<typeof carSchemaHW2>;

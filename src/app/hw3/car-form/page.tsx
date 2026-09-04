@@ -1,22 +1,24 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { createCarActionHW2 } from "@/actions/cars";
-import {CarFormData, carSchemaHW2} from "../../../../lib/carSchemaHW2";
+import { joiResolver } from "@hookform/resolvers/joi";
+import { createCarActionHW3 } from "@/actions/cars";
+import {carSchemaHW3} from "../../../../lib/carSchemaHW3";
+import {CarFormData} from "../../../../lib/carSchemaHW3";
 
 export default function CreateCarPage() {
     const {
         register,
         handleSubmit,
         setError,
+        reset,
         formState: { errors, isSubmitting },
     } = useForm<CarFormData>({
-        resolver: zodResolver(carSchemaHW2),
+        resolver: joiResolver(carSchemaHW3),
     });
 
     const onSubmit = async (data: CarFormData) => {
-        const response = await createCarActionHW2(data);
+        const response = await createCarActionHW3(data);
 
         if (!response.success && response.errors) {
             Object.entries(response.errors).forEach(([field, messages]) => {
@@ -26,6 +28,7 @@ export default function CreateCarPage() {
             });
         } else if (response.success) {
             alert("Car created successfully!");
+            reset();
         }
     };
 
